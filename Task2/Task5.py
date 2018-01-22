@@ -6,4 +6,4 @@ showHours = setMinutes // 60 % 24 # // - целочисл. деление, во�
 showMinutes = setMinutes % 60 # % - возвращает остаток
 # подробнее можно узнать на http://pythonicway.com/python-operators
 
-print("На часах: {:02d}:{:02d}".format(showHours, showMinutes))
+print("На часах: {0:02d}:{1:02d}".format(showHours, showMinutes))
