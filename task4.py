@@ -1,6 +1,0 @@
-pupilsInClass = input()
-needDesks = int((pupilsInClass / 2))
-if needDesks != int(needDesks):
-    needDesks = (int(pupilsInClass / 2)+1)
-else:
-    needDesks = (pupilsInClass / 2)
