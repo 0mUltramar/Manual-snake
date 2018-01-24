@@ -12,6 +12,6 @@ elif X == 10:
     Y = 0
     print("Y = {}".format(Y))
 elif X < 10:
-    Y = -X
+    Y = X * (-1)
     print("Y = {}".format(Y))
 
