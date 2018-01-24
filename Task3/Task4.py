@@ -7,15 +7,10 @@ print("Программа вычисляет Y из функции y = f(x) по
 
 X = float(input('X = '))
 
+Y = 0
 if X > 10:
     Y = X + 1.5
-    print("Y = {}".format(Y))
-
-elif X == 10:
-    Y = 0
-    print("Y = {}".format(Y))
-
 elif X < 10:
-    Y = X * (-1)
-    print("Y = {}".format(Y))
+    Y = -1 * X
 
+print('Y = {}'.format(Y))
