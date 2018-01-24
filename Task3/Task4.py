@@ -5,11 +5,13 @@
 print("Программа вычисляет Y из функции y = f(x) по введенному значению X")
 
 X = float(input('X = '))
+try:
+    Y = 0
+    if X > 10:
+        Y = X + 1.5
+    elif X < 10:
+        Y = -1 * X
 
-Y = 0
-if X > 10:
-    Y = X + 1.5
-elif X < 10:
-    Y = -1 * X
-
-print('Y = {}'.format(Y))
+    print('Y = {}'.format(Y))
+except():
+    print('Вероятно, вы ввели не число, попробуйте еще раз!')
