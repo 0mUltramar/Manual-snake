@@ -8,12 +8,10 @@ try:
             print("Ты заставляешь меня снова на тебя орать. ВВЕДИ ЦЕЛОЕ ЧИСЛО!")
         else:
             #формируем список
-            rangeList = []
             theSum = 0
             for i in range(1, x):
-
-
-                print("Сумма чисел от 1 до {0} = {1}".format(x, sum(rangeList)))
+                theSum += i
+            print("Сумма чисел от 1 до {0} = {1}".format(x, theSum))
 except ValueError:
     print("Какая-то херня, браток")
 except Exception:
