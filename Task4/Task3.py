@@ -25,3 +25,8 @@ except ValueError:
 except Exception:
     print("Даже я не ожидал такой ереси, я всяко повидал")
 
+# когда тупит IDE
+except UnicodeDecodeError:
+    print('Шта? Повтори с тем же значением, ибо мы видимся в последний раз')
+
+
