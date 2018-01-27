@@ -28,3 +28,4 @@ except SyntaxError:
 
 except UnicodeDecodeError:
     print('Шта?')
+
