@@ -30,3 +30,4 @@ else:
     for i in range(1, x):
         theSum = theSum + i
     print("Сумма чисел от 1 до {0} = {1}".format(x, theSum))
+
