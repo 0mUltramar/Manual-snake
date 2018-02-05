@@ -18,10 +18,3 @@ print("Тот же список, только в профиль: {}".format(i))
 
 # второй способ
 print("~" * 50)
-revList = []
-for i in range(7):
-    a = [rnd.randint(100, 1000)]
-    revList.append(a)
-print("Список в естественной последовательности: {}".format(revList))
-list.reverse(revList)
-print("Список в обратном порядке: {} ".format(revList))
