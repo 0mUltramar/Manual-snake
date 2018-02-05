@@ -22,6 +22,6 @@ print("~" * 50)
 wList = []  # создаем новый список
 for i in range(listLim):
     wList.append(iList[-i])
-print(wList)
+print('список в обратном порядке: ', wList)
 
 
