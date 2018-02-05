@@ -11,10 +11,17 @@ listLim = 6
 
 # rnd.randint(A, B) - генерит случайное целое число N, где A ≤ N ≤ B, упаковываем в квадр. скобки,
 # тем самым заюзаем конструктор списков
-i = [rnd.randint(1, 100) for _ in range(listLim)]
-print("Вот что нагенерили: {}".format(i))
-list.reverse(i)
-print("Тот же список, только в профиль: {}".format(i))
+iList = [rnd.randint(1, 100) for _ in range(listLim)]
+print("Вот что нагенерили: {}".format(iList))
+list.reverse(iList)
+print("Тот же список, только в профиль: {}".format(iList))
 
 # второй способ
 print("~" * 50)
+
+wList = []  # создаем новый список
+for i in range(listLim):
+    wList.append(iList[-i])
+print(wList)
+
+
