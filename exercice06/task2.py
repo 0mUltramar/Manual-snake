@@ -5,5 +5,3 @@ for i in range(4):
     a = input(str('Введи что нибудь: '))
     mylist.append(a)
 print(mylist)
-
-
