@@ -38,3 +38,7 @@ print("Из множества найденые числа: {}".format(foundCrit
 print("Каждое найдено за соотвествующее его позиции число итераций {}".format(iterList))
 print("Корни из этих чисел: {}".format(sqrtList))
 print("Потребовалось итераций: {}".format(totalIter))
+
+
+superList = [int(x ** 0.5) for x in range(1, 1000) if x ** 0.5 == round(x ** 0.5)]
+print(superList)
