@@ -25,3 +25,4 @@ for i in range(listLim):
 print('список в обратном порядке: ', wList)
 
 
+
