@@ -11,8 +11,8 @@ listLim = 10
 # Юзаем конструктор списков, создаем список из 10 элементов
 iList = [rnd.randint(1, 1000) for i in range(listLim)]
 print('Полный список', iList)
-# В новый список выводим каждую вторую запись
 
+# В новый список выводим каждую вторую запись
 evenList = []
 for i in range(listLim):
     if not i % 2 == 0:
