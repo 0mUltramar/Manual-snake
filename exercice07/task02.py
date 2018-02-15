@@ -1,7 +1,9 @@
+# функция для ввода чисел
+
 def get_digital():
-    x = float(input('Введите первое число:'))
-    y = float(input('Введите второе число:'))
-    return x, y
+    a = float(input('Введите первое число:'))
+    b = float(input('Введите второе число:'))
+    return a, b
 
 
 try:
