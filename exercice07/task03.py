@@ -10,17 +10,18 @@ def catchDigitsFromUser():
 
 
 def sumTwoDigits(a, b):
-    NumSum = sum(a, b)
-    return NumSum
+    return a + b
 
 
 def pazzle():
-    catchDigitsFromUser()
-    sumTwoDigits()
-    print(pazzle())
+    a, b = catchDigitsFromUser()
+    total = sumTwoDigits(a, b)
+    return total
 
+
+result = pazzle()
 
 try:
-    print("Сумма чисел равна: {}".format(pazzle()))
+    print("Сумма чисел равна:", result)
 except ValueError:
     print('Какая-то херня, а не цифры')
