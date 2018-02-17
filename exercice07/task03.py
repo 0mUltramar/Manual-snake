@@ -2,26 +2,26 @@
 # Программа, которая считывает два числа и выводит их сумму
 
 
-def catchDigitsFromUser():
-    ''' функция для получения 2 значений от пользователя '''
-    a = float(input('Введите первое число:'))
-    b = float(input('Введите второе число:'))
-    return a, b
+def catch_digits_from_user():
+    try:
+        ''' функция для получения 2 значений от пользователя '''
+        a = float(input('Введите первое число:'))
+        b = float(input('Введите второе число:'))
+        return a, b
+    except ValueError:
+        print('Какая-то херня, а не цифры')
 
 
-def sumTwoDigits(a, b):
+def sum_two_digits(a, b):
     return a + b
 
 
-def pazzle():
-    a, b = catchDigitsFromUser()
-    total = sumTwoDigits(a, b)
+def assemble_func_pazzle():
+    a, b = catch_digits_from_user()
+    total = sum_two_digits(a, b)
     return total
 
 
-result = pazzle()
+result = assemble_func_pazzle()
+print("Сумма чисел равна:", result)
 
-try:
-    print("Сумма чисел равна:", result)
-except ValueError:
-    print('Какая-то херня, а не цифры')
