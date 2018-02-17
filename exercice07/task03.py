@@ -22,6 +22,5 @@ def assemble_func_pazzle():
     return total
 
 
-result = assemble_func_pazzle()
-print("Сумма чисел равна:", result)
+print("Сумма чисел равна:", assemble_func_pazzle())
 
