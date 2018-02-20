@@ -10,13 +10,18 @@ def catch_digits_from_user():
         return a, b
     except ValueError:
         print('Какая-то херня, а не цифры')
+        exit()
 
 
 def sum_two_digits(a, b):
+    """ Функция сложения двух аргументов"""
     return a + b
 
 
 def assemble_func_pazzle():
+    """Из функции catch_digits_from_user()  получает 2 значения, введенных
+    пользователем с клавиатуры. Далее, вычисляем сумму этих значений
+    в функции sum_two_digits() """
     a, b = catch_digits_from_user()
     total = sum_two_digits(a, b)
     return total

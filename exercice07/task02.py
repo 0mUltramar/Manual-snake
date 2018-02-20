@@ -1,12 +1,11 @@
 # функция для ввода чисел
 
-def get_digital():
-    a = float(input('Введите первое число:'))
-    b = float(input('Введите второе число:'))
-    return a, b
-
-
-try:
-    print("Вы указали числа", get_digital())
-except ValueError:
-    print('Какая-то херня, а не цифры')
+def catch_digits_from_user():
+    try:
+        ''' функция для получения 2 значений от пользователя с проверкой на тип введенных данных'''
+        a = float(input('Введите первое число:'))
+        b = float(input('Введите второе число:'))
+        return a, b
+    except ValueError:
+        print('Какая-то херня, а не цифры')
+        exit()
