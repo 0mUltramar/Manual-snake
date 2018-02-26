@@ -1,34 +1,54 @@
 # Написать функцию, приминмающую номер месяца и возвращающую время года, которому принадледжит месяц. Не забыть про
 # проверки входных данных в самой функции. Вызвать функцию в цикле несколько раз для случайных значений номера месяца.
 
-import re
+# Формируем словарь сезон-месяцы
 
-monthShortNumbersList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
-monthFullNumbersList = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
-monthShortNamesListEn = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
-monthFullNamesListEn = ["January", "February", "March", "April", "May", "June", "July", "August",
-                        "September", "October", "November", "December"]
-monthShortNamesListRu = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"]
-monthFullNamesListRu = ["январь", "февраль", "март", "апрель", "май", "июнь",
-                        "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"]
+seasons = {'Winter': ('1', '2', '12'),
+           'Sping': ('3', '4', '5'),
+           'Summer': ('6', '7', '8'),
+           'Autumn': ('9', '10', '11')}
 
-# Формируем общий список вариантов месяца
-allMonthVar = monthShortNumbersList + monthFullNumbersList + monthShortNamesListRu \
-              + monthShortNamesListEn + monthFullNamesListRu + monthFullNamesListEn
-# приводим значения в списке к нижнему регистру
-allMonthVar = [element.lower() for element in allMonthVar]
+# формируем словарь для ассоциации между цифровым значением месяца и текстовым именем
+months = {'1': ('01', '1', 'jan', 'january', 'янв', 'январь'),
+          '2': ('02', '2', 'feb', 'february', 'фев', 'февраль'),
+          '3': ('03', '3', 'mar', 'march', 'мар', 'март'),
+          '4': ('04', '4', 'apr', 'april', 'апр', 'апрель'),
+          '5': ('05', '5', 'may', 'may', 'май', 'май'),
+          '6': ('06', '6', 'jun', 'june', 'июн', 'июнь'),
+          '7': ('07', '7', 'jul', 'july', 'июл', 'июль'),
+          '8': ('08', '8', 'aug', 'august', 'авг', 'август'),
+          '9': ('09', '9', 'sep', 'september', 'сен', 'сентябрь'),
+          '10': ('10', 'oct', 'october', 'окт', 'октябрь'),
+          '11': ('11', 'nov', 'november', 'ноя', 'ноябрь'),
+          '12': ('12', 'dec', 'december', 'дек', 'декабрь')}
 
 
 def input_month():
     """ получаем любое значение с клавиатуры и, если можем, привеодим его к нижн. регистру"""
-    a = input("Введите мясяц: ")
+    a = input("Введите мясяц в формате 01 или 1 или полное/сокращенное название на русском или англ. яз.: ")
     a = a.lower()
     return a
 
 
-def find_month_index(a):
-    if bool(re.match('^[0][1-9]$|^[1-9][0-2]$|[1-9]|^[a-z]]')) is True:
-        allMonthVar.index(a)
-    else:
-        print("Я столько для тебя сделал, а ты таки умудрился ввести месяц в неизвестном формате")
+def find_mont_in_set():
+    """Проверяем, есть ли указанное позьзователем в функции input_month() значение в словаре months.
+    Если есть, то выводим ключ."""
+    monthval = input_month()
+    for key in months.keys():
+        if monthval in months[key]:
+            return key
         exit()
+
+
+def find_season_by_month():
+    val = find_mont_in_set()
+    for numb_of_month in seasons.keys():
+        if val in seasons[numb_of_month]:
+            print(numb_of_month)
+
+
+print(find_season_by_month())
+
+
+
+# второй способ с генератором
