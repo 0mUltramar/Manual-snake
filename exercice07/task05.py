@@ -32,23 +32,46 @@ def input_month():
 
 def find_mont_in_set():
     """Проверяем, есть ли указанное позьзователем в функции input_month() значение в словаре months.
-    Если есть, то выводим ключ."""
+    Если есть, то выводим ключ, которому соотвествует введенное значение месяца."""
     monthval = input_month()
     for key in months.keys():
         if monthval in months[key]:
             return key
-        exit()
 
 
 def find_season_by_month():
+    """Получаем значение (номер) месяца из функции find_mont_in_set() и по нему получаем ключ,
+    являющийся сезоном, к которому принадлежит месяц"""
     val = find_mont_in_set()
     for numb_of_month in seasons.keys():
         if val in seasons[numb_of_month]:
-            print(numb_of_month)
+            return (numb_of_month)
 
 
-print(find_season_by_month())
+print("Введенному месяцу соотвествует сезон: {}".format(find_season_by_month()))
+
+# А теперь выполнение задания :)
+
+import random as rnd
 
 
+def find_season(m: "номер месяца от 1 до 12"):
+    mInt = int(m)
+    if 2 < mInt < 6:
+        season = "Spring"
+    elif 5 < mInt < 9:
+        season = "Summer"
+    elif 8 < mInt < 11:
+        season = "Autumn"
+    elif mInt == 12 or 0 < mInt < 3:
+        season = "Winter"
+    else:
+        season = "Shit happens"
 
-# второй способ с генератором
+    return season
+
+
+randomsDig = [rnd.randrange(1, 12, 1) for _ in range(1, 13)]
+
+for i in randomsDig:
+    print(i, find_season(i))
