@@ -12,6 +12,7 @@ xInt = int(x)
 if xInt < 1:
     print("Число не положительное")
     exit()
+    
 
 
 def sum_numbers(endRange):
