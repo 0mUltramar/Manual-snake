@@ -1,0 +1,34 @@
+""" Нарисовать прямоугольник черепашкой """
+
+import turtle
+
+
+def make_rect():
+    i = 0
+    for i in range(4):
+        if i == 0 or i == 2:
+            turtle.forward(50)
+            i += 1
+            turtle.left(90)
+        elif i == 1 or i == 3:
+            turtle.forward(25)
+            i += 1
+            turtle.left(90)
+    turtle.exitonclick()
+make_rect()
+
+
+
+
+def drawing_rect():
+    i = 0
+    for i in range(2):
+        turtle.forward(50)
+        turtle.left(90)
+        for i in range(1):
+            turtle.forward(25)
+            i += 1
+            turtle.left(90)
+    turtle.exitonclick()
+
+drawing_rect()
